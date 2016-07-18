@@ -76,13 +76,16 @@ $(function() {
          * and completes its work, there is at least a
          * single .entry element within the .feed container.
          */
-        it('has at least one entry', function(done) {
+        it('has at least one entry', function() {
            expect($('.feed .entry').length).toBeGreaterThan(0);
-           done();
         });
     });
 
     describe('New Feed Selection', function() {
+        /* Assigning the hmtl content of the feed element with
+         * the feed class to a variable, in order to compare
+         * it in a later test.
+         */
         beforeEach(function(done) {
             loadFeed(0, function() {
                 previousFeed = $('.feed').html();
